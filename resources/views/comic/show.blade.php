@@ -1,10 +1,10 @@
 {{-- Creo un file index che contenga tutti i fumetti --}}
 @extends('layouts.base')
 
-@section('pageTitle', 'Comics')
-
+@section('pageTitle')
+    {{ $comic->title }}
+@endsection
 @section('content')
-
     <div class="container my-5 d-flex justify-content-center">
 
         {{-- per prendere i dati utilizzo il nome iniettato, visibile dando il comando php artisan route:list tramite terminale --}}
@@ -22,5 +22,4 @@
         </div>
 
     </div>
-
 @endsection
