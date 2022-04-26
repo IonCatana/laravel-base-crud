@@ -22,12 +22,13 @@
                     <th scope="col">Serie</th>
                     <th scope="col">Data di vendita</th>
                     <th scope="col">Tipo</th>
+                    <th scope="col">Link</th>
                 </tr>
 
             </thead>
 
             <tbody>
-
+                {{-- Ciclo ogni fumetto presente in $data e lo mostro per ogni riga della tabella --}}
                 @foreach ($data as $item)
                     <tr>
                         <th scope="row">{{ $item['id'] }}</th>
@@ -40,6 +41,7 @@
                         <td>{{ $item['series'] }}</td>
                         <td>{{ $item['sale_date'] }}</td>
                         <td>{{ $item['type'] }}</td>
+                        <td><a href="{{ route('comic.show', $item->id) }}" class="btn btn-primary">Vedi</a></td>
                     </tr>
                 @endforeach
 

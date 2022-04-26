@@ -47,9 +47,12 @@ class ComicController extends Controller
      * @param  \App\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+
+    //inietto il parametro variabile, lasciando a Laravel il compito di passare l'ID specifico
+    public function show(Comic $comic)
     {
         //
+        return view('comic.show', compact('comic'));
     }
 
     /**
