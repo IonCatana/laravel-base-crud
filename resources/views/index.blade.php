@@ -1,5 +1,5 @@
 @extends('layouts.base')
 @section('pageTitle', 'HomePage')
 @section('content')
-Ciao Home Page
+    Ciao Home Page
 @endsection
