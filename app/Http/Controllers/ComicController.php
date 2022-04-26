@@ -14,7 +14,10 @@ class ComicController extends Controller
      */
     public function index()
     {
-        //
+        //Salvo nella variabile $data tutto il database che passa dal Model Comic
+        $data = Comic::all();
+        //Nella index specifica della risorsa passo tutto il database
+        return view('comic.index', compact('data'));
     }
 
     /**
@@ -44,7 +47,7 @@ class ComicController extends Controller
      * @param  \App\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function show(Comic $comic)
+    public function show($id)
     {
         //
     }
@@ -55,7 +58,7 @@ class ComicController extends Controller
      * @param  \App\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comic $comic)
+    public function edit($id)
     {
         //
     }
@@ -67,7 +70,7 @@ class ComicController extends Controller
      * @param  \App\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -78,7 +81,7 @@ class ComicController extends Controller
      * @param  \App\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comic $comic)
+    public function destroy($id)
     {
         //
     }
