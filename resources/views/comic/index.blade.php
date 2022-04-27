@@ -7,7 +7,7 @@
 
     <div class="container">
         <a href="/">Home</a>
-        <a class="btn btn-success" role="button" href="{{route('comic.create')}}">Crea nuovo fumetto</a>
+        <a class="btn btn-success" role="button" href="{{ route('comic.create') }}">Crea nuovo fumetto</a>
 
         <h1 class="my-4">Fumetti disponibili</h1>
 
@@ -44,6 +44,14 @@
                         <td>{{ $item['sale_date'] }}</td>
                         <td>{{ $item['type'] }}</td>
                         <td><a href="{{ route('comic.show', $item->id) }}" class="btn btn-primary">Vedi</a></td>
+                        <td><a href="{{ route('comic.edit', $item->id) }}" class="btn btn-warning">Modifica</a></td>
+                        <td>
+                            <form method="POST" action="{{ route('comic.destroy', ['comic' => $item->id]) }}">
+                                @csrf
+                                @method('DELETE')
+                                <button type='submit' class="btn btn-danger">Elimina</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
 
